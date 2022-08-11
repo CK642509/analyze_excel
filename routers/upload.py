@@ -3,6 +3,8 @@ from urllib import response
 from fastapi import APIRouter, Request, UploadFile, HTTPException, Response
 from fastapi.responses import FileResponse, JSONResponse
 
+from utils.analyze import analyze
+
 router = APIRouter()
 
 @router.post(
@@ -16,6 +18,9 @@ async def upload(request: Request, file: UploadFile):
         title = _form["title"]
         file_buffer = await file.read()
         print(title)
+
+        analyze(file_buffer)
+
 
         header = {"status": "OK"}
 
