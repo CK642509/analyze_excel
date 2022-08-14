@@ -1,3 +1,5 @@
+![example workflow](https://github.com/CK642509/analyze_excel/actions/workflows/main.yml/badge.svg)
+
 # fastapi-template
 
 ## TODO
